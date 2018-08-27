@@ -7,9 +7,8 @@
 # Rock beats scissors
 # Scissors beats paper
 # Paper beats rock
-#@TODO to improve: 
-#1)try to use dictionary to print the actual value of weapon instead of the letter!
-#2)add check that only R,P,S can be given as input
+#TODO: try to use dictionary to print the actual value of weapon instead of the letter!
+#TODO: add check that only R,P,S can be given as input
 
 while True:
 	print "Let's play ROCK, PAPER, SCISSORS!"
@@ -30,7 +29,3 @@ while True:
 		break
 		
 print "Thanks for playing, goodbye!"
-
-#while userInput != "rock" or "paper" or "scissors":
- 
-#print "User 1 has chosen %s and user 2 has chosen " % userInput1, userinput2
