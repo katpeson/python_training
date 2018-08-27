@@ -7,7 +7,9 @@
 # Rock beats scissors
 # Scissors beats paper
 # Paper beats rock
-@TODO to improve: try to use dictionary to print the actual value of weapon instead of the letter!
+#@TODO to improve: 
+#1)try to use dictionary to print the actual value of weapon instead of the letter!
+#2)add check that only R,P,S can be given as input
 
 while True:
 	print "Let's play ROCK, PAPER, SCISSORS!"
@@ -24,10 +26,10 @@ while True:
 		print "User1 wins with ", user1
 	
 	newGame = raw_input ('Play again (Y)es or (N)o?')
-	if newGame == N:
+	if newGame == 'N':
 		break
-	else:
-		print "Thanks for playing, goodbye!"
+		
+print "Thanks for playing, goodbye!"
 
 #while userInput != "rock" or "paper" or "scissors":
  
