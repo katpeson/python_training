@@ -1,3 +1,5 @@
+# http://www.practicepython.org/exercise/2014/02/26/04-divisors.html
+
 number = int(raw_input("Give me a number to work with: "))
 list = range(1,number+1)
 divisors = []

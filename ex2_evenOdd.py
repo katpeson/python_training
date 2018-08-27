@@ -1,3 +1,5 @@
+# http://www.practicepython.org/exercise/2014/02/05/02-odd-or-even.html
+
 check = int(raw_input("Give me the first number: "))
 number = int(raw_input("Give me the second number:"))
 

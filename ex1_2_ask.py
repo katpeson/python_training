@@ -1,3 +1,5 @@
+# http://www.practicepython.org/exercise/2014/01/29/01-character-input.html
+
 name = raw_input("What's your name? ")
 age = int(raw_input("How old are you? "))
 year = str((2018-age)+100)

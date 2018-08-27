@@ -1,3 +1,5 @@
+# http://www.practicepython.org/exercise/2014/03/12/06-string-lists.html
+
 alist = raw_input("Give me a string: ")
 x = len(alist)
 blist = []
