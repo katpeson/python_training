@@ -7,13 +7,28 @@
 # Rock beats scissors
 # Scissors beats paper
 # Paper beats rock
+@TODO to improve: try to use dictionary to print the actual value of weapon instead of the letter!
 
-userInput1 = input('Type "rock", "paper" or "scissors" to play as user 1:' )
-  while userInput1 != "rock" or "paper" or "scissors":
-    userInput1 = input('Type "rock", "paper" or "scissors" to play as user 1:' )
-    
-userInput2 = input('Type "rock", "paper" or "scissors" to play as user 2:' )
-  while userInput2 != "rock" or "paper" or "scissors":
-    userInput2 = input('Type "rock", "paper" or "scissors" to play as user 2:' )
+while True:
+	print "Let's play ROCK, PAPER, SCISSORS!"
+	print "RULES: Rock beats scissors beats paper beats rock"
+
+	user1 = raw_input('Type Rock (R), Paper (P) or Scissors (S) to play:' )
+	user2 = raw_input('Type Rock (R), Paper (P) or Scissors (S) to play:' )
+
+	if user1 == user2:
+		print "It's a draw!"
+	elif (user1 == 'R' and user2 == 'P') or (user1 == 'P' and user2 == 'S') or (user1 == 'S' and user2 == 'R'):
+		print "User2 wins with ", user2
+	elif (user2 == 'R' and user1 == 'P') or (user2 == 'P' and user1 == 'S') or (user2 == 'S' and user1 == 'R'):
+		print "User1 wins with ", user1
+	
+	newGame = raw_input ('Play again (Y)es or (N)o?')
+	if newGame == N:
+		break
+	else:
+		print "Thanks for playing, goodbye!"
+
+#while userInput != "rock" or "paper" or "scissors":
  
- 
+#print "User 1 has chosen %s and user 2 has chosen " % userInput1, userinput2
