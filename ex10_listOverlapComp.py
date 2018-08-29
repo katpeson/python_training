@@ -6,8 +6,8 @@ import random
 # b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 a = random.sample(range(50), 20)
 b = random.sample(range(30), 8)
-# common = set(a).intersection(set(b)) #clean version of the below
 common = []
+# common = set(a).intersection(set(b)) #cleaner version, just trying sets but better check the other ex10 file
 # common2 = []
 # this below I try to fit in one line
 # for i in a:
@@ -18,5 +18,5 @@ common = [i for i in a if i in b and i not in common]
 
 print (a)
 print (b)
-print (common)
+print list(common)
 # print (common2)
