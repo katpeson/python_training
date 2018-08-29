@@ -10,7 +10,8 @@
 # Scissors beats paper
 # Paper beats rock
 # TODO: try to use dictionary to print the actual value of weapon instead of the letter!
-# TODO: add check that only R,P,S can be given as input
+# TODO: add to check that R,P,S can also be given as input in lower capitals
+# TODO: add a comment when correct value given
 
 RESULT_CHARACTERS = ['R', 'P', 'S']
 YN_CHARACTERS = ['Y', 'N']
