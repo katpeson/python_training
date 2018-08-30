@@ -1,0 +1,22 @@
+I_AM_A_CONSTANT = 3
+
+i_am_a_variable = 2
+
+
+
+def foo_bar():
+    return True
+
+
+def fooBar():
+    return False
+
+
+
+class FooBar(object):
+
+    def method_1(self):
+        return False
+
+
+fb_instance = FooBar()
