@@ -7,7 +7,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 
 
-# My function to return titles from the main page
+# My function to return titles from the main page (top only since rest is dynamic content)
 def print_titles(url):
     nro = 1
     r = requests.get(url)
