@@ -1,7 +1,5 @@
 # http://www.practicepython.org/exercise/2014/05/28/16-password-generator.html
 # ...strong passwords have a mix of lowercase letters, uppercase letters, numbers, and symbols!
-# TODO ask user for the length of the needed pw and pass that on!
-# TODO extra: Ask the user how strong they want their password to be. For weak, pick a word or two from a list.
 
 import random
 import string
