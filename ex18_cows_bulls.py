@@ -29,9 +29,9 @@ def check_digits(number):
 
 # takes random and the user number and provides cows and bulls respectively
 def count_cows(random_number, user_number):
+    # not sure if the below if is even needed anymore (probably not)
     if user_number == random_number:
         return [4, 0]
-
     cows = 0
     bulls = 0
     for i in range(len(user_number)):
