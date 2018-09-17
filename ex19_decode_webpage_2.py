@@ -9,15 +9,26 @@ import requests
 from bs4 import BeautifulSoup as bs
 
 
-# My function to return titles from the main page (top only since rest is dynamic content)
-def get_text(url):
+# finds the id="article" part of the html (incl. page_nav)
+def get_article(url):
     r = requests.get(url)
     r_html = r.text
     # now r_html contains the HTML of the page
     soup = bs(r_html, 'html.parser')
-    # lists all articles in the top section of the website (seems the rest of the page is outside html)
-    # TODO: here comes the code!
+    article = soup.find(id="article")
+
+    print article.h1.string #prints the title of the article
+    print article.h2.string #prints second title of the article
+    # TODO: now I should go through each page (can edit url with the href value) and print out contents
+    # TODO: ... of those while there still is 'next page' available
+    # while next_page_a:
+    #     article = soup.find(id="article")
+    #     print_section(article)
+    #     next_page_a = soup.find(id="nextpage").find('a', href=True)
+    # a_href = next_page_a['href']
+    # print a_href
+    return article
 
 
-print "Printing full article stretching over several pages from: "
-print_titles('https://www.theregister.co.uk/2014/08/26/top_ten_gaming_keyboard_and_mouse_combos/')
+print "Printing full article stretching over several pages: "
+get_article('https://www.theregister.co.uk/2014/08/26/top_ten_gaming_keyboard_and_mouse_combos/')
