@@ -27,11 +27,11 @@ def create_sorted_list(length, max_value):
     return sorted_list
 
 
-# Checks if can find given number from the given list
+# Checks if can find given number from the given list using list.index()
 # :param list_a is given list of integers to check
 # :param nro is given integer to find from the list
 # :return True if nro is found from list and False if it's not there
-def in_list(list_a, nro):
+def index_search(list_a, nro):
     try:
         list_a.index(nro)
         return True
@@ -39,30 +39,32 @@ def in_list(list_a, nro):
         return False
 
 
-# Does the same job as in_list() above but using binary search
-# :param list_a is given list of integers to check
+# Does the same job as in_list() above but using binary search and calls the function recursively
+# :param list_a is given ordered list of integers to check
 # :param nro is given integer to find from the list
 # :return True if nro is found from list and False if it's not there
-# TODO this gets stuck when length or middle gets too low! and returns None only
-def binary_list_search(list_a, nro):
-    length = len(list_a)
-    print "length is ", length
-    while length > 1:
-        middle = len(list_a)//2
-        if middle > 1:
-            print "middle is ", middle
-            if list_a[middle] > nro:
-                list_a = list_a[:middle-1]
-                length = len(list_a)
-                print "length is ", length
-            elif list_a[middle] < nro:
-                list_a = list_a[middle+1:]
-                length = len(list_a)
-                print "length is ", length
-    if length < 1:
+def binary_search(list_a, nro):
+    mid = len(list_a) // 2
+    if nro == list_a[mid]:
+        return True
+    elif len(list_a) == 1:
         return False
     else:
-        return True
+        if nro < list_a[mid]:
+            return binary_search(list_a[:mid], nro)
+        else:
+            return binary_search(list_a[mid+1:], nro)
+
+
+def search(list_a, nro):
+    for i in range(len(list_a)):
+        if i >= len(list_a):
+            return False
+        elif list_a[i] == nro:
+            return True
+        else:
+            i += 1
+    return False
 
 
 # main to run the task
@@ -73,9 +75,9 @@ if __name__ == "__main__":
     print "Sorted list is: ", list_c
     number = random.randint(0, max_int)
     print "Number to find is: ", number
-    # print "Search with list index method -->"
-    # print "Number found in sorted list? "
-    # print in_list(list_c, number)
+    print "Search with list index method -->"
+    print index_search(list_c, number)
     print "Search with binary search method -->"
-    # print "Number found in sorted list? "
-    print binary_list_search(list_c, number)
+    print binary_search(list_c, number)
+    print "Search list index by index with loop -->"
+    print search(list_c, number)
