@@ -11,10 +11,10 @@ from bs4 import BeautifulSoup as bs
 
 
 # goes through all pages on article and prints the content from those as text
-def save_full_article_to_file(url):
+def save_full_article_to_file(url, filename):
     article = get_article(url)
     # save all content to a file
-    with open('ex21_saved_article.txt', 'w') as open_file:
+    with open(filename + '.txt', 'w') as open_file:
         print "Got inside writing method"
         open_file.write(
             "Writing to file multi-page article from: " + '\n'
@@ -54,7 +54,19 @@ def get_article(url):
     return article
 
 
+# asks user for the 4-digit number and only accepts integer
+def get_file_name(prompt="Give filename to save article: "):
+    print "Your article will be saved as .txt file"
+    user_input = ''
+    while not user_input:
+        try:
+            user_input = str(raw_input(prompt))
+        except ValueError:
+            print("That's not a filename (string)")
+    return user_input
+
+
 # main to run the task
 if __name__ == "__main__":
     url_a = "https://www.theregister.co.uk/2014/08/26/top_ten_gaming_keyboard_and_mouse_combos/"
-    save_full_article_to_file(url_a)
+    save_full_article_to_file(url_a, get_file_name())
