@@ -21,17 +21,6 @@ def print_titles(url):
         nro += 1
 
 
-# # Testing other peoples solution to bring all article titles
-# # returns 'None' on 3.9.2018 so I assume the html has changed and this can no longer locate the article titles
-# def test(url):
-#     res = requests.get(url)
-#     soup = bs(res.text, 'html.parser')
-#     stories = soup.findAll("h2", {"class": "story-heading"})
-#     for i in stories:
-#         cleantitle = i.text.strip()
-#         return(cleantitle)
-
-
 print "Article titles on front page: "
 print_titles('http://www.nytimes.com/')
 # print test('http://www.nytimes.com/')
