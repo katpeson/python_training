@@ -53,7 +53,10 @@ def binary_search(list_a, nro):
         if nro < list_a[mid]:
             return binary_search(list_a[:mid], nro)
         else:
-            return binary_search(list_a[mid+1:], nro)
+            if len(list_a) == 2:
+                return False
+            else:
+                return binary_search(list_a[mid+1:], nro)
 
 
 def search(list_a, nro):
