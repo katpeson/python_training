@@ -43,6 +43,9 @@ def print_dictionary(dictionary):
 
 
 # EXTRA
+# counts different categories for sun images going given file through line by line
+# splits each file line from after '/a/' and before the image file name (always 25 char long in the end)
+# returns dictionary where category + count of the given category showing in file is given
 def get_categories(file_name):
     cat_dict = {}
     with open(file_name, 'r') as open_file:
